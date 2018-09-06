@@ -7,6 +7,8 @@ class Preferences extends Component {
       fetch(`http://localhost:3001/preferences/${id}`, {
         body: JSON.stringify({ levelOfInterest: value }),
         method: 'POST',
+      }).then(() => {
+        this.props.onChange();
       });
     };
   }
