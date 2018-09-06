@@ -75,7 +75,6 @@ footer {
 
 .row {
   display: flex;
-  padding: 10px;
 }
 
 .label-column {
@@ -106,18 +105,22 @@ footer {
 }
 
 .portfolioRating {
-    
+    max-height: 100px;
+    padding-top: 50px;
+    padding-left: 25px;
+    display: inline-block;
 }
 
 .rating-value {
     display: inline-block;
-    padding:15px;
+    padding-left: 15px;
+    font-size: 22px;
     color: white;
 }
 
 .rating-trend-up {
     display: inline-block;
-    padding: 15px;
+    padding: 18px;
     background: center center url(../images/arrow_up.png);
     background-color: transparent;
     object-fit: contain;
