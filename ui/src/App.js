@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import Preferences from './components/Preferences';
-import PortfolioRating from './components/PortfolioRating';
+import Reporting from './components/Reporting';
 import { callFetch } from './services/repository';
 import Menu from './components/Menu';
 import TopBar from './components/TopBar';
@@ -57,7 +57,7 @@ class App extends Component {
             categories={categories}
             onChange={this.handlePreferencesChange}
           />
-          <PortfolioRating/>
+          <Reporting/>
         </div>
         <footer>
           <div class="footer-disclaimer">

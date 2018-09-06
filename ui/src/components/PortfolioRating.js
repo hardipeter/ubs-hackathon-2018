@@ -4,33 +4,28 @@ import FiveStar from './FiveStar';
 
 class PortfolioRating extends Component {
   
-  state = {
-      value : 7,
-      trend : 1,
-  }
-  
   componentDidMount() {
   }
   
   calculate() {
-      if (this.state.value <3)
+      if (this.props.value <3)
         return "#990000";
-      if (this.state.value < 5) {
+      if (this.props.value < 5) {
           return "#885511";
       }
-      if (this.state.value <6)
+      if (this.props.value <6)
         return "#AA8811";
-      if (this.state.value < 8) {
+      if (this.props.value < 8) {
           return "#88BB11";
       }
       return "#11AA11";
   }
 
   render() {
-    const {value, trend} = this.state;
+    const {value, trend} = this.props;
     var backgroundColor = this.calculate();
     return (
-        <div className="portfolioRating">
+        <div>
             <div />
             <div>
               <table className="rating-table" bgcolor={backgroundColor}>

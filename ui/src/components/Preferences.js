@@ -9,7 +9,7 @@ class Preferences extends Component {
         body: JSON.stringify({ levelOfInterest: value }),
         method: 'POST',
       }).then(() => {
-        this.props.onChange();
+        this.props.onChange;
       });
     };
   }
