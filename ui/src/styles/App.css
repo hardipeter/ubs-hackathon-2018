@@ -23,6 +23,17 @@ header {
   padding: 20px;
 }
 
+footer {
+  padding: 20px;
+}
+
+.footer-disclaimer {
+  margin: 5px 0;
+  font-size: 11px;
+  line-height: 15px;
+  font-family: Frutiger Roman, Arial, Helvetica, sans-serif;
+}
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -47,6 +58,9 @@ header {
 
 .content-container {
   display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+  margin: 0 20px;
 }
 
 .settings-container {
@@ -57,7 +71,6 @@ header {
 
 .settings-container h3 {
   font-family: UBSHeadlineWebFont, UBSHeadline, Times New Roman, Times, serif;
-  padding-left: 20px;
 }
 
 .row {

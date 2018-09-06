@@ -59,6 +59,15 @@ class App extends Component {
           />
           <PortfolioRating/>
         </div>
+        <footer>
+          <div class="footer-disclaimer">
+            The products, services, information and/or materials contained
+            within these web pages may not be available for residents of certain
+            jurisdictions. Please consult the sales restrictions relating to the
+            products or services in question for further information.
+            <br />© UBS 1998-2018. All rights reserved.
+          </div>
+        </footer>
       </div>
     );
   }
