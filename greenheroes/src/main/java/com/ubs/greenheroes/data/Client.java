@@ -18,6 +18,17 @@ public class Client {
         preferenceCategories.add(category);
     }
 
+    public ClientPreference getClientPreference(int id) {
+        for (ClientPreferenceCategory category : preferenceCategories) {
+            for (ClientPreference preference : category.getPreferences()) {
+                if (preference.getID() == id) {
+                    return preference;
+                }
+            }
+        }
+        return null;
+    }
+
     public List<ClientPreferenceCategory> getCategories() {
         return Collections.unmodifiableList(preferenceCategories);
     }

@@ -3,11 +3,17 @@ package com.ubs.greenheroes.data;
 public class ClientPreference {
 
     private final String name;
+    private final int id;
     private InterestLevel levelOfInterest = InterestLevel.LOW;
 
-    public ClientPreference(String name, InterestLevel level) {
+    public ClientPreference(String name, int id, InterestLevel level) {
         this.name = name;
+        this.id = id;
         setLevelOfInterest(level);
+    }
+
+    public int getID() {
+        return id;
     }
 
     public String getName() {
