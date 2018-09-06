@@ -1,7 +1,5 @@
 package com.ubs.greenheroes.data;
 
-import com.ubs.greenheroes.data.Client;
-import com.ubs.greenheroes.data.Instrument;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,30 +1,39 @@
 package com.ubs.greenheroes.generate;
 
-import com.ubs.greenheroes.data.Client;
-import com.ubs.greenheroes.data.ClientPreference;
-import com.ubs.greenheroes.data.ClientPreferenceCategory;
-import com.ubs.greenheroes.data.Instrument;
-import com.ubs.greenheroes.data.InterestLevel;
-import com.ubs.greenheroes.data.MockedDatabase;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import com.ubs.greenheroes.data.*;
+import org.springframework.util.ResourceUtils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class MockedDataGenerator {
 
     private static final List<String> CATEGORY_NAME_LIST = Arrays.asList("Pollution and waste", "Climate change", "Water", "People", "Products and services", "Governance", "Ethics");
     private static final Random RANDOM = new Random(0); //0, to always get the same randoms for proper testing
 
-    public static void createMockedInstruments() {
-        for (int i = 0; i < 10000; ++i) {
-            Instrument portfolio = new Instrument("Instrument " + i);
+    public static void createMockedInstruments() throws FileNotFoundException {
+        for (String companyName : MockedDataGenerator.readInCompanyNames()) {
+            Instrument instrument = new Instrument(companyName);
             CATEGORY_NAME_LIST.stream().forEach((name) -> {
                 float weight = RANDOM.nextFloat() * 100;
                 weight = formatWeight(weight);
-                portfolio.addPreferenceWeigth(name, weight);
+                instrument.addPreferenceWeigth(name, weight);
             });
-            MockedDatabase.INSTRUMENTS.add(portfolio);
+            MockedDatabase.INSTRUMENTS.add(instrument);
         }
+    }
+
+    public static List<String> readInCompanyNames() throws FileNotFoundException {
+        File file = ResourceUtils.getFile("classpath:companies.txt");
+        Scanner s = new Scanner(file).useDelimiter("[|\n]");
+        ArrayList<String> nameList = new ArrayList<String>();
+        while (s.hasNext()) {
+            nameList.add(s.next());
+        }
+        s.close();
+
+        return nameList;
     }
 
     public static void createMockedClient() {
