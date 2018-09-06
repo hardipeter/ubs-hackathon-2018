@@ -1,0 +1,40 @@
+{
+  "name": "Luke Skywalker",
+  "preferenceCategories": [
+    {
+      "name": "Environmental",
+      "preferences": [
+        {
+          "_id": 0,
+          "name": "Pollution and waste",
+          "levelOfInterest": "HIGH"
+        },
+        {
+          "_id": 1,
+          "name": "Climate change",
+          "levelOfInterest": "MEDIUM"
+        },
+        {
+          "_id": 2,
+          "name": "Water",
+          "levelOfInterest": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "name": "Social",
+      "preferences": [
+        {
+          "_id": 3,
+          "name": "People",
+          "levelOfInterest": "LOW"
+        },
+        {
+          "_id": 4,
+          "name": "Products and services",
+          "levelOfInterest": "MEDIUM"
+        }
+      ]
+    }
+  ]
+}
