@@ -91,3 +91,44 @@ header {
 .settings-container .r-segmented-control > ul > li.dark.selected {
   background: #9a3d37 !important;
 }
+
+.portfolioRating {
+    
+}
+
+.rating-value {
+    display: inline-block;
+    padding:15px;
+    color: white;
+}
+
+.rating-trend-up {
+    display: inline-block;
+    padding: 15px;
+    background: center center url(../images/arrow_up.png);
+    background-color: transparent;
+    object-fit: contain;
+    background-repeat: no-repeat;
+}
+
+.rating-table {
+    border-collapse:separate;
+    border:none;
+    border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+.emptyStar {
+    content: url(../images/star_empty.png);
+    display: inline-block;
+}
+
+.halfStar {
+    content: url(../images/star_half.png);
+    display: inline-block;
+}
+
+.fullStar {
+    content: url(../images/star_full.png);
+    display: inline-block;
+}

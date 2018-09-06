@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import Preferences from './components/Preferences';
+import PortfolioRating from './components/PortfolioRating';
 import { callFetch } from './services/repository';
 import Menu from './components/Menu';
 import TopBar from './components/TopBar';
@@ -56,7 +57,7 @@ class App extends Component {
             categories={categories}
             onChange={this.handlePreferencesChange}
           />
-          <div style={{ flex: 1, background: `#${color}`, margin: '10px' }} />
+          <PortfolioRating/>
         </div>
       </div>
     );

@@ -440,7 +440,7 @@ const Menu = () => {
                     <input
                       placeholder="Account/IBAN"
                       type="text"
-                      maxlength="100"
+                      maxLength="100"
                       name="searchQuery"
                       id="INPUT_210"
                     />
