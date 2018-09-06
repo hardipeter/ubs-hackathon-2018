@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Preferences from './components/Preferences';
+import { callFetch } from './services/repository';
 
 const getRandomColorCode = () => {
   return Math.floor(Math.random() * 1000000);
@@ -13,7 +14,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:3001/preferences', { mode: 'cors' })
+    callFetch('preferences')
       .then(response => response.json())
       .then(data => {
         this.setState({ data });
@@ -30,11 +31,11 @@ class App extends Component {
       return <div className="spinner" />;
     }
 
-    const { preferenceCategories } = data;
+    const { categories } = data;
     return (
       <div className="content-container">
         <Preferences
-          categories={preferenceCategories}
+          categories={categories}
           onChange={this.handlePreferencesChange}
         />
         <div style={{ flex: 1, background: `#${color}` }} />

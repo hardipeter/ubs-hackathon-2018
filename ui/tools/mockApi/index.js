@@ -2,7 +2,7 @@ const express = require('express');
 const preferences = require('./preferences');
 
 const app = express();
-const port = 3001;
+const port = 8080;
 
 const TIMEOUT = 500;
 const delay = (req, res, next) => setTimeout(next, TIMEOUT);
