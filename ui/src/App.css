@@ -18,7 +18,8 @@
 }
 
 .label-column {
-  flex: 2;
+  flex: 1;
+  min-width: 200px;
   display: flex;
   align-items: center;
 }
