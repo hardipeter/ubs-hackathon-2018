@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Preferences from './components/Preferences';
 
 class App extends Component {
+  state = {
+    data: null,
+  };
+
+  componentDidMount() {
+    fetch('http://localhost:3001/preferences', { mode: 'cors' })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ data });
+      });
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    const { data } = this.state;
+
+    if (!data) {
+      return <div className="spinner" />;
+    }
+
+    const { preferenceCategories } = data;
+    return <Preferences categories={preferenceCategories} />;
   }
 }
 
