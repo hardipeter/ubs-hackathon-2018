@@ -24,7 +24,11 @@ class App extends Component {
   }
 
   handlePreferencesChange = () => {
-    this.setState({ color: getRandomColorCode() });
+    callFetch('investments')
+    .then(response => response.json())
+    .then(data => {
+        this.setState({ color: getRandomColorCode() });
+    });
   };
 
   renderContent() {
