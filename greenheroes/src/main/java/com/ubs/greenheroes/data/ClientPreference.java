@@ -2,22 +2,23 @@ package com.ubs.greenheroes.data;
 
 public class ClientPreference {
 
-    private String name;
-    private InterestLevel levelOfInterest;
+    private final String name;
+    private InterestLevel levelOfInterest = InterestLevel.LOW;
+
+    public ClientPreference(String name, InterestLevel level) {
+        this.name = name;
+        setLevelOfInterest(level);
+    }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public InterestLevel getLevelOfInterest() {
         return levelOfInterest;
     }
 
-    public void setLevelOfInterest(InterestLevel levelOfInterest) {
+    public final void setLevelOfInterest(InterestLevel levelOfInterest) {
         this.levelOfInterest = levelOfInterest;
     }
 }
