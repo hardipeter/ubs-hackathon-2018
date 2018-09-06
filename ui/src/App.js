@@ -52,7 +52,7 @@ class App extends Component {
             categories={categories}
             onChange={this.handlePreferencesChange}
           />
-          <div style={{ flex: 1, background: `#${color}` }} />
+          <div style={{ flex: 1, background: `#${color}`, margin: '10px' }} />
         </div>
       </div>
     );

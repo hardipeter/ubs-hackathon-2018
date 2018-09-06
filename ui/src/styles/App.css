@@ -1,7 +1,15 @@
 @import '../../node_modules/normalize.css/normalize.css';
 
+@font-face {
+  font-family: 'UBSHeadlineWebFont';
+  src: url('../fonts/ubsheadline-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #efefef;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .grid-wrapper {
@@ -48,6 +56,7 @@ header {
 }
 
 .settings-container h3 {
+  font-family: UBSHeadlineWebFont, UBSHeadline, Times New Roman, Times, serif;
   padding-left: 20px;
 }
 
