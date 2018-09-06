@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PreferencesRow from './PreferencesRow';
+import { callFetch } from '../services/repository';
 
 class Preferences extends Component {
   createPreferenceChangeHandler(id) {
     return value => {
-      fetch(`http://localhost:3001/preferences/${id}`, {
+      callFetch(`preferences/${id}`, {
         body: JSON.stringify({ levelOfInterest: value }),
         method: 'POST',
       }).then(() => {
@@ -23,13 +24,13 @@ class Preferences extends Component {
             <div key={category.name}>
               <h3>{category.name}</h3>
               {category.preferences.map(preference => {
-                const { _id, name, levelOfInterest } = preference;
+                const { id, name, levelOfInterest } = preference;
                 return (
                   <PreferencesRow
-                    key={_id}
+                    key={id}
                     label={name}
                     value={levelOfInterest}
-                    onPreferenceChange={this.createPreferenceChangeHandler(_id)}
+                    onPreferenceChange={this.createPreferenceChangeHandler(id)}
                   />
                 );
               })}
