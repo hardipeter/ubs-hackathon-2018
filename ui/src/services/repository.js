@@ -9,5 +9,5 @@ const commonFetchOptions = {
 };
 
 export const callFetch = (path, options) => {
-  return fetch(`${API_ADDRESS}${path}`, { commonFetchOptions, ...options });
+  return fetch(`${API_ADDRESS}${path}`, { ...commonFetchOptions, ...options });
 };
