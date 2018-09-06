@@ -2,7 +2,6 @@ package com.ubs.greenheroes.controllers;
 
 import com.ubs.greenheroes.data.Client;
 import com.ubs.greenheroes.data.ClientPreference;
-import com.ubs.greenheroes.data.InterestLevel;
 import com.ubs.greenheroes.data.MockedDatabase;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,10 +23,10 @@ public class ClientPreferenceController {
     @CrossOrigin(origins = ACCEPTED_ORIGINS)
     @RequestMapping("/preferences/{id}")
     public void setClientPreference(@PathVariable(name = "id") int id,
-                                    @RequestBody InterestLevel interest) {
+                                    @RequestBody InterestObject interest) {
         final ClientPreference clientPreference = MockedDatabase.CLIENT.getClientPreference(id);
         if (clientPreference != null) {
-            clientPreference.setLevelOfInterest(interest);
+            clientPreference.setLevelOfInterest(interest.getLevelOfInterest());
         }
     }
 
