@@ -1,28 +1,38 @@
-.App {
+.spinner {
+  background: center center url(./images/spinner.gif);
+  background-repeat: no-repeat;
+  background-size: 42px;
+  min-height: 400px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.settings-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.row {
+  display: flex;
+  padding: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.label-column {
+  flex: 2;
+  display: flex;
+  align-items: center;
 }
 
-.App-intro {
-  font-size: large;
+.slider-column {
+  flex: 3;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.settings-container .r-segmented-control {
+  border-bottom: 0;
+}
+
+.settings-container .r-segmented-control > ul {
+  padding: 0;
 }
