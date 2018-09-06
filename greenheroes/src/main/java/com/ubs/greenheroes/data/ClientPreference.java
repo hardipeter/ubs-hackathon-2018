@@ -3,7 +3,7 @@ package com.ubs.greenheroes.data;
 public class ClientPreference {
 
     private String name;
-    private byte value;
+    private InterestLevel levelOfInterest;
 
     public String getName() {
         return name;
@@ -13,11 +13,11 @@ public class ClientPreference {
         this.name = name;
     }
 
-    public byte getValue() {
-        return value;
+    public InterestLevel getLevelOfInterest() {
+        return levelOfInterest;
     }
 
-    public void setValue(byte value) {
-        this.value = value;
+    public void setLevelOfInterest(InterestLevel levelOfInterest) {
+        this.levelOfInterest = levelOfInterest;
     }
 }

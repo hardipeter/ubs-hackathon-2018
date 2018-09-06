@@ -6,9 +6,14 @@ import java.util.List;
 
 public class ClientPreferenceCategory {
 
+    private String name;
     private final List<ClientPreference> preferences = new ArrayList<>();
 
     public List<ClientPreference> getPreferences() {
         return Collections.unmodifiableList(preferences);
+    }
+
+    public String getName() {
+        return name;
     }
 }
