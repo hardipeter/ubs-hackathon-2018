@@ -45,7 +45,7 @@ public class MockedDataGenerator {
 
         float total = 1f;
         for (int i = 0; i < 14; i++) { //amount of instruments for the client mocked
-            float weight = RANDOM.nextFloat() * total;
+            float weight = RANDOM.nextFloat() * total / 2;
             total -= weight;
             InstrumentHolding holding = new InstrumentHolding(MockedDatabase.INSTRUMENTS.get(i), weight);
             instrumentHoldings.add(holding);
