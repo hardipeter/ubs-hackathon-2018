@@ -4,11 +4,11 @@ import com.ubs.greenheroes.data.Client;
 import com.ubs.greenheroes.data.HoldingRanking;
 import com.ubs.greenheroes.data.InstrumentHolding;
 import com.ubs.greenheroes.data.MockedDatabase;
+import java.util.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.*;
 
 @RestController
 public class ClientController {
@@ -32,6 +32,15 @@ public class ClientController {
         Collections.sort(result);
 
         return result;
+    }
+
+    @CrossOrigin(origins = ACCEPTED_ORIGINS)
+    @RequestMapping("/clients/holdings/remove/{id}")
+    public void removeID(@PathVariable(name = "id") int id) {
+        Client client = MockedDatabase.CLIENT;
+        if (client.getInstrumentHoldings().size() > id) {
+            client.getInstrumentHoldings().remove(id);
+        }
     }
 
     @CrossOrigin(origins = ACCEPTED_ORIGINS)
@@ -66,7 +75,8 @@ public class ClientController {
                 Float currentValue = result.get(holding.getInstrument().getName());
                 if (currentValue == null) {
                     result.put(holding.getInstrument().getName(), ranking);
-                } else {
+                }
+                else {
                     result.put(holding.getInstrument().getName(), ranking + currentValue);
                 }
             });
