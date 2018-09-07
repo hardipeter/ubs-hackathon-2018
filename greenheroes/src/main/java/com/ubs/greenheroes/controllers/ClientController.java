@@ -4,6 +4,8 @@ import com.ubs.greenheroes.data.Client;
 import com.ubs.greenheroes.data.HoldingRanking;
 import com.ubs.greenheroes.data.InstrumentHolding;
 import com.ubs.greenheroes.data.MockedDatabase;
+import com.ubs.greenheroes.generate.MockedDataGenerator;
+import java.io.FileNotFoundException;
 import java.util.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,6 +42,16 @@ public class ClientController {
         Client client = MockedDatabase.CLIENT;
         if (client.getInstrumentHoldings().size() > id) {
             client.removeInstrumentHolding(id);
+        }
+    }
+
+    @CrossOrigin(origins = ACCEPTED_ORIGINS)
+    @RequestMapping("/clients/reset")
+    public void resetClient() {
+        try {
+            MockedDataGenerator.createMockedClient();
+        }
+        catch (FileNotFoundException ex) {
         }
     }
 
