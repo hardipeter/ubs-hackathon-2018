@@ -4,7 +4,7 @@ import Ratings from 'react-ratings-declarative';
 const FiveStar = ({ value, color }) => {
   return (
     <Ratings
-      rating={parseFloat(value) / 2}
+      rating={parseFloat(value)}
       widgetDimensions="50px"
       widgetSpacings="15px"
     >

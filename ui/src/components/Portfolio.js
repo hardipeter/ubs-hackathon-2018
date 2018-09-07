@@ -19,7 +19,7 @@ class Portfolio extends Component {
               <tr>
                 <td>{investment.name}</td>
                 <td>{investment.ranking.toFixed(2)}</td>
-                <td>{investment.portfolioWeight.toFixed(2)}</td>
+                <td>{((investment.portfolioWeight)*100).toFixed(2)} %</td>
                 <td>
                   <a
                     className="remove-button"
