@@ -77,6 +77,11 @@ footer {
   display: flex;
 }
 
+.row img {
+  width: 40px !important;
+  height: 40px !important;
+}
+
 .label-column {
   flex: none;
   display: flex;
@@ -140,6 +145,12 @@ footer {
   flex: 1;
   text-align: center;
   margin-bottom: 30px;
+}
+
+.portfolio-rating h2 {
+  margin-top: 0;
+  color: black;
+  font-family: UBSHeadlineWebFont, UBSHeadline, Times New Roman, Times, serif;
 }
 
 .rating-value {

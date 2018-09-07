@@ -13,6 +13,7 @@ class PortfolioRating extends Component {
     }
     return (
       <div className="portfolio-rating" style={{ color }}>
+        <h2>Your personal sustainability index score</h2>
         <div className="rating-value">{value}</div>
         <div className={trend > 0 ? 'rating-trend-up' : 'rating-trend-down'} />
         <FiveStar value={value} color={color} />
