@@ -30,7 +30,7 @@ class App extends Component {
         this.setState({ investmentData: data });
       });
   }
-
+  
   handlePreferencesChange = () => {
     callFetch('clients/holdings')
       .then(response => response.json())
@@ -79,7 +79,9 @@ class App extends Component {
             categories={categories}
             onChange={this.handlePreferencesChange}
           />
-          <Reporting ranking={rankingValue * 2} investments={investmentData} />
+          <Reporting ranking={rankingValue * 2} 
+                     investments={investmentData} 
+                     onChange={this.handlePreferencesChange}/>
         </div>
         <footer>
           <div className="footer-disclaimer">

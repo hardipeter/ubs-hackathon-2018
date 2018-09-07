@@ -39,7 +39,7 @@ public class ClientController {
     public void removeID(@PathVariable(name = "id") int id) {
         Client client = MockedDatabase.CLIENT;
         if (client.getInstrumentHoldings().size() > id) {
-            client.getInstrumentHoldings().remove(id);
+            client.removeInstrumentHolding(id);
         }
     }
 

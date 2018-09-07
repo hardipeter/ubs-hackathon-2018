@@ -24,6 +24,10 @@ public class Client {
         this.instrumentHoldings.addAll(instrumentHoldings);
     }
 
+    public void removeInstrumentHolding(int index) {
+        this.instrumentHoldings.remove(index);
+    }
+
     public ClientPreference getClientPreference(int id) {
         for (ClientPreferenceCategory category : preferenceCategories) {
             for (ClientPreference preference : category.getPreferences()) {
