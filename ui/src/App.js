@@ -9,8 +9,8 @@ import TopBar from './components/TopBar';
 class App extends Component {
   state = {
     data: null,
-    ranking : null,
-    investmentData : null,
+    ranking: null,
+    investmentData: null,
   };
 
   componentDidMount() {
@@ -18,30 +18,30 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ data: data });
-    });
+      });
     callFetch('clients/ranking')
       .then(response => response.json())
       .then(data => {
         this.setState({ ranking: data });
-    });  
+      });
     callFetch('clients/holdings')
       .then(response => response.json())
       .then(data => {
-        this.setState({ investmentData : data });
-    });
+        this.setState({ investmentData: data });
+      });
   }
 
   handlePreferencesChange = () => {
-      callFetch('clients/holdings')
+    callFetch('clients/holdings')
       .then(response => response.json())
       .then(data => {
-        this.setState({ investmentData : data });
-    });
+        this.setState({ investmentData: data });
+      });
     callFetch('clients/ranking')
-    .then(response => response.json())
-    .then(data => {
+      .then(response => response.json())
+      .then(data => {
         this.setState({ ranking: data });
-    });
+      });
   };
 
   renderContent() {
@@ -53,13 +53,13 @@ class App extends Component {
 
     const { investmentData } = this.state;
     if (!investmentData) {
-        return <div className="spinner" />;
+      return <div className="spinner" />;
     }
     console.log('Investment data: ' + investmentData);
-    
+
     let rankingValue = this.state.ranking;
     if (!rankingValue) {
-        rankingValue = 6.75;
+      rankingValue = 6.75;
     }
     return (
       <div className="grid-wrapper">
@@ -79,7 +79,7 @@ class App extends Component {
             categories={categories}
             onChange={this.handlePreferencesChange}
           />
-          <Reporting ranking={rankingValue*2} investments={investmentData}/>
+          <Reporting ranking={rankingValue * 2} investments={investmentData} />
         </div>
         <footer>
           <div className="footer-disclaimer">

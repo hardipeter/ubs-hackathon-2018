@@ -1,30 +1,20 @@
 import React from 'react';
+import Ratings from 'react-ratings-declarative';
 
-const FiveStar = ({ value }) => {
-    let starNodes = [];
-    while (value >= 2) {
-        const starNode = (
-           <img className="fullStar"/>
-        )
-        starNodes.push(starNode);
-        value -=2;
-    }
-    
-    if (value > 0.5) {
-        const starNode = (
-           <img className="halfStar"/>
-        );
-        starNodes.push(starNode);
-    }
-    
-    while (starNodes.length < 5) {
-        const starNode = (
-           <img className="emptyStar"/>
-        );
-        starNodes.push(starNode);
-    }
-    
-    return starNodes;
+const FiveStar = ({ value, color }) => {
+  return (
+    <Ratings
+      rating={parseFloat(value)}
+      widgetDimensions="50px"
+      widgetSpacings="15px"
+    >
+      <Ratings.Widget widgetRatedColor={color} />
+      <Ratings.Widget widgetRatedColor={color} />
+      <Ratings.Widget widgetRatedColor={color} />
+      <Ratings.Widget widgetRatedColor={color} />
+      <Ratings.Widget widgetRatedColor={color} />
+    </Ratings>
+  );
 };
 
 export default FiveStar;

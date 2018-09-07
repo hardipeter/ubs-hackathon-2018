@@ -104,57 +104,42 @@ footer {
   background: #9a3d37 !important;
 }
 
-.portfolioRating {
-    max-height: 100px;
-    padding-top: 50px;
-    padding-left: 20px;
-}
-
-.rating-value {
-    display: inline-block;
-    padding-left: 15px;
-    font-size: 22px;
-    color: white;
-}
-
 .rating-trend-up {
-    display: inline-block;
-    padding: 18px;
-    background: center center url(../images/arrow_up.png);
-    background-color: transparent;
-    object-fit: contain;
-    background-repeat: no-repeat;
+  display: inline-block;
+  padding: 18px;
+  background: center center url(../images/arrow_up.png);
+  background-color: transparent;
+  object-fit: contain;
+  background-repeat: no-repeat;
 }
 
 .rating-trend-down {
-    display: inline-block;
-    padding: 18px;
-    background: center center url(../images/arrow_down.png);
-    background-color: transparent;
-    object-fit: contain;
-    background-repeat: no-repeat;
+  display: inline-block;
+  padding: 18px;
+  background: center center url(../images/arrow_down.png);
+  background-color: transparent;
+  object-fit: contain;
+  background-repeat: no-repeat;
 }
 
-.rating-table {
-    border-collapse:separate;
-    border:none;
-    border-radius:10px;
-    -moz-border-radius:10px;
+.reporting {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px 0 20px;
 }
 
-.emptyStar {
-    content: url(../images/star_empty.png);
-    display: inline-block;
+.portfolio-rating {
+  flex: 1;
+  text-align: center;
 }
 
-.halfStar {
-    content: url(../images/star_half.png);
-    display: inline-block;
-}
-
-.fullStar {
-    content: url(../images/star_full.png);
-    display: inline-block;
+.rating-value {
+  padding-left: 15px;
+  font-size: 104px;
+  font-weight: bold;
+  text-shadow: 0 0 5px 0 currentColor;
+  font-family: UBSHeadlineWebFont, UBSHeadline, Times New Roman, Times, serif;
 }
 
 .portfolio-container {
