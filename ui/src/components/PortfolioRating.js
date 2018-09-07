@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { callFetch } from '../services/repository';
 import FiveStar from './FiveStar';
 
 class PortfolioRating extends Component {
-  
-  componentDidMount() {
-  }
   
   calculate() {
       if (this.props.value <3)
@@ -22,7 +18,8 @@ class PortfolioRating extends Component {
   }
 
   render() {
-    const {value, trend} = this.props;
+    let {value, trend} = this.props;
+    value = value.toFixed(2);
     var backgroundColor = this.calculate();
     return (
         <div>
@@ -35,7 +32,7 @@ class PortfolioRating extends Component {
                     <div className="rating-value">{value}</div>
                   </td>
                   <td>
-                    <div className="rating-trend-up"/>
+                    <div className={trend > 0 ? "rating-trend-up" : "rating-trend-down"}/>
                   </td>
                 </tr>
                 <tr>

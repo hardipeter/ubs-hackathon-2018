@@ -2,7 +2,6 @@ import React from 'react';
 
 const FiveStar = ({ value }) => {
     let starNodes = [];
-    console.log(value);
     while (value >= 2) {
         const starNode = (
            <img className="fullStar"/>

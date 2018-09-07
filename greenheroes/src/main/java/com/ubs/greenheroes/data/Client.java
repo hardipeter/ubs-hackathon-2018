@@ -58,6 +58,6 @@ public class Client {
     }
 
     public List<InstrumentHolding> getInstrumentHoldings() {
-        return instrumentHoldings;
+        return Collections.unmodifiableList(instrumentHoldings);
     }
 }

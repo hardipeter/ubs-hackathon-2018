@@ -1,16 +1,14 @@
 package com.ubs.greenheroes.controllers;
 
-
 import com.ubs.greenheroes.data.Client;
 import com.ubs.greenheroes.data.InstrumentHolding;
 import com.ubs.greenheroes.data.MockedDatabase;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ClientController {
@@ -34,7 +32,7 @@ public class ClientController {
 
         for (InstrumentHolding holding : holdings) {
             String instrumentName = holding.getInstrument().getName();
-            result +=  (rankingPerHolding.get(instrumentName) * holding.getPortfolioWeighting());
+            result += (rankingPerHolding.get(instrumentName) * holding.getPortfolioWeighting());
         }
 
         return result / holdings.size();
@@ -51,8 +49,14 @@ public class ClientController {
             Map<String, Float> rankings = holding.getInstrument().getRankingPerCategory();
 
             rankings.entrySet().forEach((category) -> {
-                float ranking = (client.getClientPreferenceInterestLevelMultiplier(category.getKey()) * category.getValue()) / 7;
-                result.put(holding.getInstrument().getName(), ranking);
+                float ranking = (client.getClientPreferenceInterestLevelMultiplier(category.getKey()) * category.getValue()) / 7f;
+                Float currentValue = result.get(holding.getInstrument().getName());
+                if (currentValue == null) {
+                    result.put(holding.getInstrument().getName(), ranking);
+                }
+                else {
+                    result.put(holding.getInstrument().getName(), ranking + currentValue);
+                }
             });
         }
         return result;

@@ -4,12 +4,13 @@ import { callFetch } from '../services/repository';
 
 class Preferences extends Component {
   createPreferenceChangeHandler(id) {
+    console.log('handlePreferenceChange');
     return value => {
       callFetch(`preferences/${id}`, {
         body: JSON.stringify({ levelOfInterest: value }),
         method: 'POST',
       }).then(() => {
-        this.props.onChange;
+        this.props.onChange();
       });
     };
   }

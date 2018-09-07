@@ -14,6 +14,7 @@ class App extends Component {
   state = {
     data: null,
     color: getRandomColorCode(),
+    ranking : null,
   };
 
   componentDidMount() {
@@ -22,13 +23,18 @@ class App extends Component {
       .then(data => {
         this.setState({ data });
       });
+    callFetch('clients/ranking')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ ranking: data });
+      });  
   }
 
   handlePreferencesChange = () => {
-    callFetch('investments')
+    callFetch('clients/ranking')
     .then(response => response.json())
     .then(data => {
-        this.setState({ color: getRandomColorCode() });
+        this.setState({ ranking: data });
     });
   };
 
@@ -39,6 +45,10 @@ class App extends Component {
     }
 
     const { categories } = data;
+    let rankingValue = this.state.ranking;
+    if (!rankingValue) {
+        rankingValue = 6.75;
+    }
     return (
       <div className="grid-wrapper">
         <header>
@@ -57,10 +67,10 @@ class App extends Component {
             categories={categories}
             onChange={this.handlePreferencesChange}
           />
-          <Reporting/>
+          <Reporting ranking={rankingValue}/>
         </div>
         <footer>
-          <div class="footer-disclaimer">
+          <div className="footer-disclaimer">
             The products, services, information and/or materials contained
             within these web pages may not be available for residents of certain
             jurisdictions. Please consult the sales restrictions relating to the

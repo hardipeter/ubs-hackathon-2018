@@ -1,11 +1,10 @@
 package com.ubs.greenheroes.generate;
 
 import com.ubs.greenheroes.data.*;
-import org.springframework.util.ResourceUtils;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+import org.springframework.util.ResourceUtils;
 
 public class MockedDataGenerator {
 
@@ -40,15 +39,13 @@ public class MockedDataGenerator {
 
     private static List<InstrumentHolding> generateInstrumentHoldings() throws FileNotFoundException {
 
-        MockedDataGenerator.createMockedInstruments();
+        createMockedInstruments();
 
         List<InstrumentHolding> instrumentHoldings = new ArrayList<>();
 
         float total = 1f;
-        Random rand = new Random();
-
-        for (int i = 0; i < 14; i++) {
-            float weight = rand.nextFloat() * total;
+        for (int i = 0; i < 14; i++) { //amount of instruments for the client mocked
+            float weight = RANDOM.nextFloat() * total;
             total -= weight;
             InstrumentHolding holding = new InstrumentHolding(MockedDatabase.INSTRUMENTS.get(i), weight);
             instrumentHoldings.add(holding);
@@ -63,7 +60,7 @@ public class MockedDataGenerator {
             Instrument instrument = new Instrument(companyName);
             CATEGORY_NAME_LIST.forEach((categoryName) -> {
                 float ranking = RANDOM.nextFloat() * 100;
-                ranking = formatFloat(ranking);
+                ranking = formatFloat(ranking, 5);
                 instrument.addRankingForCategory(categoryName, ranking);
             });
             MockedDatabase.INSTRUMENTS.add(instrument);
@@ -73,7 +70,7 @@ public class MockedDataGenerator {
     private static List<String> readInCompanyNames() throws FileNotFoundException {
         File file = ResourceUtils.getFile("classpath:companies.txt");
         Scanner s = new Scanner(file).useDelimiter("[|\n]");
-        ArrayList<String> nameList = new ArrayList<String>();
+        ArrayList<String> nameList = new ArrayList<>();
         while (s.hasNext()) {
             nameList.add(s.next());
         }
@@ -82,7 +79,7 @@ public class MockedDataGenerator {
         return nameList;
     }
 
-    private static float formatFloat(float number) {
-        return Math.round(number * 100000f) / 100000f;
+    public static float formatFloat(float number, int decimals) {
+        return Math.round(number * Math.pow(10, decimals)) / (float) Math.pow(10, decimals);
     }
 }
