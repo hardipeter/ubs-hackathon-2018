@@ -19,7 +19,7 @@ class Portfolio extends Component {
               <tr>
                 <td>{investment.name}</td>
                 <td>{investment.ranking.toFixed(2)}</td>
-                <td>{((investment.portfolioWeight)*100).toFixed(2)} %</td>
+                <td>{(investment.portfolioWeight * 100).toFixed(2)} %</td>
                 <td>
                   <a
                     className="remove-button"
@@ -33,8 +33,8 @@ class Portfolio extends Component {
                     >
                       <line
                         x1="1"
-                        y1="20"
-                        x2="20"
+                        y1="14"
+                        x2="14"
                         y2="1"
                         stroke="red"
                         stroke-width="2"
@@ -42,8 +42,8 @@ class Portfolio extends Component {
                       <line
                         x1="1"
                         y1="1"
-                        x2="20"
-                        y2="20"
+                        x2="14"
+                        y2="14"
                         stroke="red"
                         stroke-width="2"
                       />
