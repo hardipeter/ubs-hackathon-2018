@@ -1,7 +1,7 @@
 import React from 'react';
 import PreferencesControl from './PreferencesControl';
 
-const PreferencesRow = ({ key, label, value, onPreferenceChange }) => {
+const PreferencesRow = ({ label, value, onPreferenceChange }) => {
   return (
     <div className="row">
       <div className="label-column">{label}</div>

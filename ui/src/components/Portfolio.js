@@ -7,7 +7,7 @@ class Portfolio extends Component {
 
     return (
       <div className="portfolio-container">
-        <div className="portfolio-header">Client portfolio</div>
+        <div className="portfolio-header">UBS Advise SI Portfolio</div>
         <table className="portfolio-content">
           <tr>
             <th>Investment</th>
