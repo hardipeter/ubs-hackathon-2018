@@ -38,6 +38,11 @@ class Preferences extends Component {
             </div>
           );
         })}
+        <div className="exclusions">
+          <h3>Your exclusions</h3>
+          <img src="/exclusion1.png" />
+          <img src="/exclusion2.png" />
+        </div>
       </div>
     );
   }
