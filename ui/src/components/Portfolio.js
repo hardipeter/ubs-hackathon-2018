@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { callFetch } from '../services/repository';
 
 class Portfolio extends Component {
   render() {
@@ -22,7 +21,34 @@ class Portfolio extends Component {
                 <td>{investment.ranking.toFixed(2)}</td>
                 <td>{investment.portfolioWeight.toFixed(2)}</td>
                 <td>
-                  <button onClick={this.removeInvestment(index)}>X</button>
+                  <a
+                    className="remove-button"
+                    onClick={this.removeInvestment(index)}
+                    title="Remove"
+                  >
+                    <svg
+                      viewPort="0 0 12 12"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line
+                        x1="1"
+                        y1="20"
+                        x2="20"
+                        y2="1"
+                        stroke="red"
+                        stroke-width="2"
+                      />
+                      <line
+                        x1="1"
+                        y1="1"
+                        x2="20"
+                        y2="20"
+                        stroke="red"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </a>
                 </td>
               </tr>
             );
