@@ -1,8 +1,11 @@
 package com.ubs.greenheroes.controllers;
 
 import com.ubs.greenheroes.data.Client;
+import com.ubs.greenheroes.data.HoldingRanking;
 import com.ubs.greenheroes.data.InstrumentHolding;
 import com.ubs.greenheroes.data.MockedDatabase;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,8 +20,19 @@ public class ClientController {
 
     @CrossOrigin(origins = ACCEPTED_ORIGINS)
     @RequestMapping("/clients/holdings")
-    public Map<String, Float> getClientHoldingsWithRanking() {
-        return calculateClientHoldingsWithRanking();
+    public List<HoldingRanking> getClientHoldingsWithRanking() {
+        List<HoldingRanking> result = new ArrayList<>();
+        Map<String, Float> rankingPerHolding = calculateClientHoldingsWithRanking();
+
+        Client client = MockedDatabase.CLIENT;
+        List<InstrumentHolding> holdings = client.getInstrumentHoldings();
+
+        for (InstrumentHolding holding : holdings) {
+            String instrumentName = holding.getInstrument().getName();
+            result.add(new HoldingRanking(instrumentName, rankingPerHolding.get(instrumentName), holding.getPortfolioWeighting()));
+        }
+
+        return result;
     }
 
     @CrossOrigin(origins = ACCEPTED_ORIGINS)
