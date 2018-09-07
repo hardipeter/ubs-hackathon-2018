@@ -64,12 +64,12 @@ footer {
 }
 
 .settings-container {
-  width: 500px;
   display: flex;
   flex-direction: column;
 }
 
 .settings-container h3 {
+  margin: 15px 0;
   font-family: UBSHeadlineWebFont, UBSHeadline, Times New Roman, Times, serif;
 }
 
@@ -78,7 +78,7 @@ footer {
 }
 
 .label-column {
-  flex: 1;
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -87,21 +87,28 @@ footer {
 }
 
 .slider-column {
-  flex: 3;
+  flex: none;
+  min-width: 140px;
   display: flex;
   align-items: center;
 }
 
 .settings-container .r-segmented-control {
+  height: 24px;
   border-bottom: 0;
 }
 
 .settings-container .r-segmented-control > ul {
   padding: 0;
+  margin: 5px 0;
+}
+
+.settings-container .r-segmented-control > ul > li {
+  height: 22px;
 }
 
 .settings-container .r-segmented-control > ul > li.dark.selected {
-  background: #9a3d37 !important;
+  background: #646464 !important;
 }
 
 .rating-trend-up {
@@ -132,6 +139,7 @@ footer {
 .portfolio-rating {
   flex: 1;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .rating-value {
@@ -153,15 +161,15 @@ footer {
 }
 
 .portfolio-content {
-    font-size:10px;
+  font-size: 10px;
 }
 
-tr:nth-child(odd){
-  background-color: #EEEEEE;
+tr:nth-child(odd) {
+  background-color: #eeeeee;
   color: #333;
 }
 
-tr:nth-child(even){
-  background-color: #F9F9F9;
+tr:nth-child(even) {
+  background-color: #f9f9f9;
   color: #000;
 }
