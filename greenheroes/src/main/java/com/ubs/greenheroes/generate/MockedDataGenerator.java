@@ -15,6 +15,7 @@ public class MockedDataGenerator {
     }
 
     public static void createMockedClient() throws FileNotFoundException {
+        MockedDatabase.INSTRUMENTS.clear();
         Client client = new Client("Luke Skywalker");
         ClientPreferenceCategory category = new ClientPreferenceCategory("Environmental");
         category.addPreference(new ClientPreference(CATEGORY_NAME_LIST.get(0), 0, InterestLevel.LOW));
