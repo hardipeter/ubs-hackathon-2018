@@ -44,6 +44,12 @@ class App extends Component {
       });
   };
 
+  hanldeProductRemove = id => {
+    callFetch(`clients/holdings/remove/${id}`, { method: 'POST' }).then(() => {
+      this.handlePreferencesChange();
+    });
+  };
+
   renderContent() {
     const { data } = this.state;
     if (!data) {
@@ -55,7 +61,6 @@ class App extends Component {
     if (!investmentData) {
       return <div className="spinner" />;
     }
-    console.log('Investment data: ' + investmentData);
 
     let rankingValue = this.state.ranking;
     if (!rankingValue) {
@@ -82,7 +87,7 @@ class App extends Component {
           <Reporting
             ranking={rankingValue * 2}
             investments={investmentData}
-            onChange={this.handlePreferencesChange}
+            onProductRemove={this.hanldeProductRemove}
           />
         </div>
         <footer>

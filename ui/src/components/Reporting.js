@@ -17,12 +17,12 @@ class Reporting extends Component {
   }
 
   render() {
-    const { ranking, investments } = this.props;
+    const { ranking, investments, onProductRemove } = this.props;
     const color = this.calculate();
     return (
       <div className="reporting">
         <PortfolioRating value={ranking} color={color} trend="-1" />
-        <Portfolio investments={investments} />
+        <Portfolio investments={investments} onRemove={onProductRemove} />
       </div>
     );
   }
