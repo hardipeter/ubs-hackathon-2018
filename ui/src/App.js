@@ -32,6 +32,11 @@ class App extends Component {
   }
 
   handlePreferencesChange = () => {
+      callFetch('clients/holdings')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ investmentData : data });
+    });
     callFetch('clients/ranking')
     .then(response => response.json())
     .then(data => {
