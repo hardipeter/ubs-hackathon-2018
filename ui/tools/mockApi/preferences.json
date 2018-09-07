@@ -1,39 +1,253 @@
 {
-  "name": "Luke Skywalker",
-  "preferenceCategories": [
+  "instrumentHoldings": [
+    {
+      "instrument": {
+        "name": "CINEMARK HOLDINGS, INC.",
+        "rankingPerCategory": {
+          "Water": 24.05364,
+          "Climate change": 83.1441,
+          "Ethics": 55.0437,
+          "People": 60.63452,
+          "Governance": 30.90506,
+          "Pollution and waste": 73.09678,
+          "Products and services": 63.74174
+        }
+      },
+      "portfolioWeighting": 0.16575462
+    },
+    {
+      "instrument": {
+        "name": "SALLY BEAUTY HOLDINGS, INC.",
+        "rankingPerCategory": {
+          "Water": 78.15346,
+          "Climate change": 59.75453,
+          "Ethics": 61.30357,
+          "People": 33.32184,
+          "Governance": 38.51892,
+          "Pollution and waste": 11.70066,
+          "Products and services": 25.27761
+        }
+      },
+      "portfolioWeighting": 0.017603211
+    },
+    {
+      "instrument": {
+        "name": "CSX Corporation",
+        "rankingPerCategory": {
+          "Water": 87.91825,
+          "Climate change": 98.28195,
+          "Ethics": 27.4954,
+          "People": 2.30818,
+          "Governance": 17.59768,
+          "Pollution and waste": 98.48415,
+          "Products and services": 94.12492
+        }
+      },
+      "portfolioWeighting": 0.050750367
+    },
+    {
+      "instrument": {
+        "name": "CABOT OIL & GAS CORPORATION",
+        "rankingPerCategory": {
+          "Water": 36.79757,
+          "Climate change": 12.88971,
+          "Ethics": 0.13866,
+          "People": 14.66016,
+          "Governance": 2.32381,
+          "Pollution and waste": 31.29359,
+          "Products and services": 70.51747
+        }
+      },
+      "portfolioWeighting": 0.20784621
+    },
+    {
+      "instrument": {
+        "name": "OIL STATES INTERNATIONAL, INC.",
+        "rankingPerCategory": {
+          "Water": 96.44868,
+          "Climate change": 0.92248,
+          "Ethics": 62.51463,
+          "People": 56.29497,
+          "Governance": 25.28831,
+          "Pollution and waste": 54.67398,
+          "Products and services": 10.44906
+        }
+      },
+      "portfolioWeighting": 0.15323782
+    },
+    {
+      "instrument": {
+        "name": "CTS CORPORATION",
+        "rankingPerCategory": {
+          "Water": 1.4927,
+          "Climate change": 41.07962,
+          "Ethics": 68.82345,
+          "People": 77.63123,
+          "Governance": 99.07228,
+          "Pollution and waste": 28.59048,
+          "Products and services": 97.66978
+        }
+      },
+      "portfolioWeighting": 0.11229325
+    },
+    {
+      "instrument": {
+        "name": "Magna International Inc.",
+        "rankingPerCategory": {
+          "Water": 74.62414,
+          "Climate change": 86.76787,
+          "Ethics": 81.72971,
+          "People": 98.09451,
+          "Governance": 57.00343,
+          "Pollution and waste": 48.72328,
+          "Products and services": 73.3152
+        }
+      },
+      "portfolioWeighting": 0.035477497
+    },
+    {
+      "instrument": {
+        "name": "THE SCOTTS MIRACLE-GRO COMPANY",
+        "rankingPerCategory": {
+          "Water": 41.22178,
+          "Climate change": 83.88903,
+          "Ethics": 98.46741,
+          "People": 52.66994,
+          "Governance": 89.93349,
+          "Pollution and waste": 1.28066,
+          "Products and services": 72.57748
+        }
+      },
+      "portfolioWeighting": 0.1221262
+    },
+    {
+      "instrument": {
+        "name": "THE GOODYEAR TIRE & RUBBER COMPANY",
+        "rankingPerCategory": {
+          "Water": 8.30624,
+          "Climate change": 54.61274,
+          "Ethics": 72.23571,
+          "People": 18.59896,
+          "Governance": 30.68711,
+          "Pollution and waste": 13.39398,
+          "Products and services": 97.85744
+        }
+      },
+      "portfolioWeighting": 0.024726735
+    },
+    {
+      "instrument": {
+        "name": "THE J. M. SMUCKER COMPANY",
+        "rankingPerCategory": {
+          "Water": 6.42736,
+          "Climate change": 71.5031,
+          "Ethics": 27.42471,
+          "People": 14.32204,
+          "Governance": 46.29578,
+          "Pollution and waste": 67.10762,
+          "Products and services": 35.91653
+        }
+      },
+      "portfolioWeighting": 0.011821126
+    },
+    {
+      "instrument": {
+        "name": "DOMTAR CORPORATION",
+        "rankingPerCategory": {
+          "Water": 7.14983,
+          "Climate change": 66.68493,
+          "Ethics": 33.87696,
+          "People": 68.95039,
+          "Governance": 81.59375,
+          "Pollution and waste": 0.44855,
+          "Products and services": 34.84202
+        }
+      },
+      "portfolioWeighting": 0.0021851251
+    },
+    {
+      "instrument": {
+        "name": "THE SOUTHERN COMPANY",
+        "rankingPerCategory": {
+          "Water": 93.2368,
+          "Climate change": 85.93565,
+          "Ethics": 53.38442,
+          "People": 97.15469,
+          "Governance": 86.57458,
+          "Pollution and waste": 60.6458,
+          "Products and services": 74.44591
+        }
+      },
+      "portfolioWeighting": 0.005890431
+    },
+    {
+      "instrument": {
+        "name": "SOUTHWESTERN ENERGY COMPANY",
+        "rankingPerCategory": {
+          "Water": 17.8988,
+          "Climate change": 4.49443,
+          "Ethics": 85.44872,
+          "People": 31.13785,
+          "Governance": 20.34037,
+          "Pollution and waste": 61.25811,
+          "Products and services": 21.75704
+        }
+      },
+      "portfolioWeighting": 0.02399404
+    },
+    {
+      "instrument": {
+        "name": "S&P GLOBAL INC.",
+        "rankingPerCategory": {
+          "Water": 41.47754,
+          "Climate change": 0.96735,
+          "Ethics": 94.81847,
+          "People": 69.2293,
+          "Governance": 77.13129,
+          "Pollution and waste": 8.27863,
+          "Products and services": 25.17554
+        }
+      },
+      "portfolioWeighting": 0.012636927
+    },
+    {
+      "instrument": {
+        "name": "MARTIN MARIETTA MATERIALS, INC.",
+        "rankingPerCategory": {
+          "Water": 21.12354,
+          "Climate change": 68.99388,
+          "Ethics": 94.53332,
+          "People": 4.81594,
+          "Governance": 39.5207,
+          "Pollution and waste": 71.26874,
+          "Products and services": 78.30924
+        }
+      },
+      "portfolioWeighting": 0.053656433
+    }
+  ],
+  "clientName": "Luke Skywalker",
+  "categories": [
     {
       "name": "Environmental",
       "preferences": [
-        {
-          "_id": 0,
-          "name": "Pollution and waste",
-          "levelOfInterest": "HIGH"
-        },
-        {
-          "_id": 1,
-          "name": "Climate change",
-          "levelOfInterest": "MEDIUM"
-        },
-        {
-          "_id": 2,
-          "name": "Water",
-          "levelOfInterest": "MEDIUM"
-        }
+        { "name": "Pollution and waste", "id": 0, "levelOfInterest": "LOW" },
+        { "name": "Climate change", "id": 1, "levelOfInterest": "HIGH" },
+        { "name": "Water", "id": 2, "levelOfInterest": "MEDIUM" }
       ]
     },
     {
       "name": "Social",
       "preferences": [
-        {
-          "_id": 3,
-          "name": "People",
-          "levelOfInterest": "LOW"
-        },
-        {
-          "_id": 4,
-          "name": "Products and services",
-          "levelOfInterest": "MEDIUM"
-        }
+        { "name": "People", "id": 3, "levelOfInterest": "LOW" },
+        { "name": "Products and services", "id": 4, "levelOfInterest": "HIGH" }
+      ]
+    },
+    {
+      "name": "Governance",
+      "preferences": [
+        { "name": "Governance", "id": 5, "levelOfInterest": "HIGH" },
+        { "name": "Ethics", "id": 6, "levelOfInterest": "LOW" }
       ]
     }
   ]
