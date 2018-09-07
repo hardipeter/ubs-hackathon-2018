@@ -79,7 +79,7 @@ public class MockedDataGenerator {
         return nameList;
     }
 
-    public static float formatFloat(float number, int decimals) {
+    private static float formatFloat(float number, int decimals) {
         return Math.round(number * Math.pow(10, decimals)) / (float) Math.pow(10, decimals);
     }
 }

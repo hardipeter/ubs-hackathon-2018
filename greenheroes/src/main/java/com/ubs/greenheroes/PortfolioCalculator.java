@@ -8,7 +8,7 @@ import com.ubs.greenheroes.data.MockedDatabase;
  *
  * @author hardipeter
  */
-public class PortfolioCalculator {
+class PortfolioCalculator {
 
     public static void calculate(Client client) {
         for (Instrument instrument : MockedDatabase.INSTRUMENTS) {
