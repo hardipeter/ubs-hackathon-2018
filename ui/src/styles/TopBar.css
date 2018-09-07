@@ -75,6 +75,7 @@
 } /*#TopBarTBODY_2:before*/
 
 #TopBarTR_3 {
+  background: white !important;
   border-collapse: collapse;
   color: rgb(34, 34, 34);
   height: 24px;
@@ -765,7 +766,7 @@
   text-decoration: none solid rgb(34, 34, 34);
   top: 0px;
   vertical-align: middle;
-  width: 30px;
+  width: 20px;
   column-rule-color: rgb(34, 34, 34);
   perspective-origin: 15px 12px;
   transform-origin: 15px 12px;
@@ -823,7 +824,7 @@
   caret-color: rgb(34, 34, 34);
   border: 0px none rgb(34, 34, 34);
   font: normal normal 400 normal 12px / normal Arial, Helvetica, sans-serif;
-  margin: 0px 0px 0px 10px;
+  margin: 0px 0px 0px 0px;
   outline: rgb(34, 34, 34) none 0px;
 } /*#TopBarDIV_26, #TopBarDIV_42, #TopBarDIV_45, #TopBarDIV_99*/
 
@@ -2342,6 +2343,7 @@
 } /*#TopBarTBODY_71:before*/
 
 #TopBarTR_72 {
+  background: white !important;
   border-collapse: collapse;
   color: rgb(34, 34, 34);
   cursor: default;

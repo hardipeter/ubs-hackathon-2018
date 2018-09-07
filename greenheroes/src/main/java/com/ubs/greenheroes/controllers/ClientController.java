@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ClientController {
 
-    static final String ACCEPTED_ORIGINS = "http://localhost:3000";
+    private static final String ACCEPTED_ORIGINS = "http://localhost:3000";
 
     @CrossOrigin(origins = ACCEPTED_ORIGINS)
     @RequestMapping("/clients/holdings")
@@ -70,8 +70,8 @@ public class ClientController {
         for (InstrumentHolding holding : holdings) {
             Map<String, Float> rankings = holding.getInstrument().getRankingPerCategory();
 
-            rankings.entrySet().forEach((category) -> {
-                float ranking = (client.getClientPreferenceInterestLevelMultiplier(category.getKey()) * category.getValue()) / 7f;
+            rankings.forEach((key, value) -> {
+                float ranking = (client.getClientPreferenceInterestLevelMultiplier(key) * value) / 7f;
                 Float currentValue = result.get(holding.getInstrument().getName());
                 if (currentValue == null) {
                     result.put(holding.getInstrument().getName(), ranking);

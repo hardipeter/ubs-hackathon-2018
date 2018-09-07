@@ -1,4 +1,5 @@
 import React from 'react';
+import Countdown from 'react-countdown-now';
 import '../styles/TopBar.css';
 
 const TopBar = () => {
@@ -303,20 +304,7 @@ const TopBar = () => {
             <span id="TopBarSPAN_121" />
           </td>
           <td id="TopBarTD_122">
-            <div id="TopBarDIV_123">
-              <div id="TopBarDIV_124">
-                <span id="TopBarSPAN_126">32399</span>
-                <span id="TopBarSPAN_127">300</span>
-                <div id="TopBarDIV_128">
-                  <span id="TopBarSPAN_129">0:04:33</span>
-                </div>
-                <button id="TopBarBUTTON_130" type="button" />
-                <div id="TopBarDIV_131">
-                  <span id="TopBarSPAN_132">0:04:33</span>
-                  <div id="TopBarDIV_133" />
-                </div>
-              </div>
-            </div>
+            <Countdown date={Date.now() + 60 * 1010 * 2} />
           </td>
         </tr>
       </tbody>
