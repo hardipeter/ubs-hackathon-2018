@@ -14,7 +14,7 @@ class Portfolio extends Component {
             <th>Weigth</th>
             <th>Action</th>
           </tr>
-          {investments.map((investment, index) => {
+          {investments.map(investment => {
             return (
               <tr>
                 <td>{investment.name}</td>
@@ -23,7 +23,7 @@ class Portfolio extends Component {
                 <td>
                   <a
                     className="remove-button"
-                    onClick={this.removeInvestment(index)}
+                    onClick={this.removeInvestment(investment.id)}
                     title="Remove"
                   >
                     <svg

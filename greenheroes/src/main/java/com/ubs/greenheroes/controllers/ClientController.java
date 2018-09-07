@@ -31,8 +31,6 @@ public class ClientController {
             result.add(new HoldingRanking(instrumentName, rankingPerHolding.get(instrumentName), holding.getPortfolioWeighting()));
         }
 
-        Collections.sort(result);
-
         return result;
     }
 

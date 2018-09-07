@@ -19,23 +19,23 @@ class App extends Component {
       .then(data => {
         this.setState({ data: data });
       });
-    callFetch('clients/ranking')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ ranking: data });
-      });
-    callFetch('clients/holdings')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ investmentData: data });
-      });
+    this.handlePreferencesChange();
   }
 
   handlePreferencesChange = () => {
     callFetch('clients/holdings')
       .then(response => response.json())
       .then(data => {
-        this.setState({ investmentData: data });
+        this.setState({
+          investmentData: data
+            .map((item, index) => {
+              item.id = index;
+              return item;
+            })
+            .sort((itemA, itemB) => {
+              return itemB.ranking - itemA.ranking;
+            }),
+        });
       });
     callFetch('clients/ranking')
       .then(response => response.json())
