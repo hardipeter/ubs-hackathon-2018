@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 public class GreenheroesApplication {
 
     public static void main(String[] args) throws FileNotFoundException {
-        MockedDataGenerator.createMockedInstruments();
         MockedDataGenerator.createMockedClient();
         SpringApplication.run(GreenheroesApplication.class, args);
     }

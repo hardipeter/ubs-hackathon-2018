@@ -12,36 +12,15 @@ public class MockedDataGenerator {
     private static final List<String> CATEGORY_NAME_LIST = Arrays.asList("Pollution and waste", "Climate change", "Water", "People", "Products and services", "Governance", "Ethics");
     private static final Random RANDOM = new Random(0); //0, to always get the same randoms for proper testing
 
-    public static void createMockedInstruments() throws FileNotFoundException {
-        for (String companyName : MockedDataGenerator.readInCompanyNames()) {
-            Instrument instrument = new Instrument(companyName);
-            CATEGORY_NAME_LIST.stream().forEach((name) -> {
-                float weight = RANDOM.nextFloat() * 100;
-                weight = formatWeight(weight);
-                instrument.addPreferenceWeigth(name, weight);
-            });
-            MockedDatabase.INSTRUMENTS.add(instrument);
-        }
+    private MockedDataGenerator() {
     }
 
-    public static List<String> readInCompanyNames() throws FileNotFoundException {
-        File file = ResourceUtils.getFile("classpath:companies.txt");
-        Scanner s = new Scanner(file).useDelimiter("[|\n]");
-        ArrayList<String> nameList = new ArrayList<String>();
-        while (s.hasNext()) {
-            nameList.add(s.next());
-        }
-        s.close();
-
-        return nameList;
-    }
-
-    public static void createMockedClient() {
+    public static void createMockedClient() throws FileNotFoundException {
         Client client = new Client("Luke Skywalker");
         ClientPreferenceCategory category = new ClientPreferenceCategory("Environmental");
         category.addPreference(new ClientPreference(CATEGORY_NAME_LIST.get(0), 0, InterestLevel.LOW));
         category.addPreference(new ClientPreference(CATEGORY_NAME_LIST.get(1), 1, InterestLevel.HIGH));
-        category.addPreference(new ClientPreference(CATEGORY_NAME_LIST.get(2), 2, InterestLevel.LOW));
+        category.addPreference(new ClientPreference(CATEGORY_NAME_LIST.get(2), 2, InterestLevel.MEDIUM));
         client.addPreferenceCategory(category);
 
         category = new ClientPreferenceCategory("Social");
@@ -53,13 +32,57 @@ public class MockedDataGenerator {
         category.addPreference(new ClientPreference(CATEGORY_NAME_LIST.get(5), 5, InterestLevel.HIGH));
         category.addPreference(new ClientPreference(CATEGORY_NAME_LIST.get(6), 6, InterestLevel.LOW));
         client.addPreferenceCategory(category);
+
+        client.addInstrumentHoldings(generateInstrumentHoldings());
+
         MockedDatabase.CLIENT = client;
     }
 
-    private static float formatWeight(float weight) {
-        return Math.round(weight * 100000f) / 100000f;
+    private static List<InstrumentHolding> generateInstrumentHoldings() throws FileNotFoundException {
+
+        MockedDataGenerator.createMockedInstruments();
+
+        List<InstrumentHolding> instrumentHoldings = new ArrayList<>();
+
+        float total = 1f;
+        Random rand = new Random();
+
+        for (int i = 0; i < 14; i++) {
+            float weight = rand.nextFloat() * total;
+            total -= weight;
+            InstrumentHolding holding = new InstrumentHolding(MockedDatabase.INSTRUMENTS.get(i), weight);
+            instrumentHoldings.add(holding);
+        }
+        instrumentHoldings.add(new InstrumentHolding(MockedDatabase.INSTRUMENTS.get(14), total));
+
+        return instrumentHoldings;
     }
 
-    private MockedDataGenerator() {
+    private static void createMockedInstruments() throws FileNotFoundException {
+        for (String companyName : MockedDataGenerator.readInCompanyNames()) {
+            Instrument instrument = new Instrument(companyName);
+            CATEGORY_NAME_LIST.forEach((categoryName) -> {
+                float ranking = RANDOM.nextFloat() * 100;
+                ranking = formatFloat(ranking);
+                instrument.addRankingForCategory(categoryName, ranking);
+            });
+            MockedDatabase.INSTRUMENTS.add(instrument);
+        }
+    }
+
+    private static List<String> readInCompanyNames() throws FileNotFoundException {
+        File file = ResourceUtils.getFile("classpath:companies.txt");
+        Scanner s = new Scanner(file).useDelimiter("[|\n]");
+        ArrayList<String> nameList = new ArrayList<String>();
+        while (s.hasNext()) {
+            nameList.add(s.next());
+        }
+        s.close();
+
+        return nameList;
+    }
+
+    private static float formatFloat(float number) {
+        return Math.round(number * 100000f) / 100000f;
     }
 }
