@@ -6,28 +6,29 @@ import { callFetch } from './services/repository';
 import Menu from './components/Menu';
 import TopBar from './components/TopBar';
 
-const getRandomColorCode = () => {
-  return Math.floor(Math.random() * 1000000);
-};
-
 class App extends Component {
   state = {
     data: null,
-    color: getRandomColorCode(),
     ranking : null,
+    investmentData : null,
   };
 
   componentDidMount() {
     callFetch('preferences')
       .then(response => response.json())
       .then(data => {
-        this.setState({ data });
-      });
+        this.setState({ data: data });
+    });
     callFetch('clients/ranking')
       .then(response => response.json())
       .then(data => {
         this.setState({ ranking: data });
-      });  
+    });  
+    callFetch('clients/holdings')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ investmentData : data });
+    });
   }
 
   handlePreferencesChange = () => {
@@ -39,12 +40,18 @@ class App extends Component {
   };
 
   renderContent() {
-    const { data, color } = this.state;
+    const { data } = this.state;
     if (!data) {
       return <div className="spinner" />;
     }
-
     const { categories } = data;
+
+    const { investmentData } = this.state;
+    if (!investmentData) {
+        return <div className="spinner" />;
+    }
+    console.log('Investment data: ' + investmentData);
+    
     let rankingValue = this.state.ranking;
     if (!rankingValue) {
         rankingValue = 6.75;
@@ -67,7 +74,7 @@ class App extends Component {
             categories={categories}
             onChange={this.handlePreferencesChange}
           />
-          <Reporting ranking={rankingValue}/>
+          <Reporting ranking={rankingValue*2} investments={investmentData}/>
         </div>
         <footer>
           <div className="footer-disclaimer">

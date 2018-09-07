@@ -156,3 +156,27 @@ footer {
     content: url(../images/star_full.png);
     display: inline-block;
 }
+
+.portfolio-container {
+  border-bottom: 0;
+  font-size: 16px;
+}
+
+.portfolio-header {
+  border-bottom: 1;
+  font-size: 22px;
+}
+
+.portfolio-content {
+    font-size:10px;
+}
+
+tr:nth-child(odd){
+  background-color: #EEEEEE;
+  color: #333;
+}
+
+tr:nth-child(even){
+  background-color: #F9F9F9;
+  color: #000;
+}

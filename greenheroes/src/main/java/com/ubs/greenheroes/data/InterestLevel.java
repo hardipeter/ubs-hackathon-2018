@@ -2,9 +2,9 @@ package com.ubs.greenheroes.data;
 
 public enum InterestLevel {
 
-    LOW(0.5f),
+    LOW(1.5f),
     MEDIUM(1f),
-    HIGH(1.5f);
+    HIGH(0.5f);
 
     private final float interestMultiplier;
 
