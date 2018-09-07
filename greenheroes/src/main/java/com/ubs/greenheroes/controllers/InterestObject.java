@@ -2,7 +2,7 @@ package com.ubs.greenheroes.controllers;
 
 import com.ubs.greenheroes.data.InterestLevel;
 
-public class InterestObject {
+class InterestObject {
 
     private InterestLevel levelOfInterest;
 
