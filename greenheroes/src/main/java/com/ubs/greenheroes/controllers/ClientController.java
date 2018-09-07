@@ -4,14 +4,11 @@ import com.ubs.greenheroes.data.Client;
 import com.ubs.greenheroes.data.HoldingRanking;
 import com.ubs.greenheroes.data.InstrumentHolding;
 import com.ubs.greenheroes.data.MockedDatabase;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.*;
 
 @RestController
 public class ClientController {
@@ -31,6 +28,8 @@ public class ClientController {
             String instrumentName = holding.getInstrument().getName();
             result.add(new HoldingRanking(instrumentName, rankingPerHolding.get(instrumentName), holding.getPortfolioWeighting()));
         }
+
+        Collections.sort(result);
 
         return result;
     }
@@ -67,8 +66,7 @@ public class ClientController {
                 Float currentValue = result.get(holding.getInstrument().getName());
                 if (currentValue == null) {
                     result.put(holding.getInstrument().getName(), ranking);
-                }
-                else {
+                } else {
                     result.put(holding.getInstrument().getName(), ranking + currentValue);
                 }
             });

@@ -1,6 +1,6 @@
 package com.ubs.greenheroes.data;
 
-public class HoldingRanking {
+public class HoldingRanking implements Comparable<HoldingRanking> {
 
     private final String name;
     private final Float ranking;
@@ -22,5 +22,10 @@ public class HoldingRanking {
 
     public Float getPortfolioWeight() {
         return portfolioWeight;
+    }
+
+    @Override
+    public int compareTo(HoldingRanking that) {
+        return this.ranking.compareTo(that.ranking) * -1;
     }
 }
