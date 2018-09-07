@@ -77,6 +77,11 @@ footer {
   display: flex;
 }
 
+.row img {
+  width: 40px !important;
+  height: 40px !important;
+}
+
 .label-column {
   flex: none;
   display: flex;

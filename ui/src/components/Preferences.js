@@ -28,6 +28,7 @@ class Preferences extends Component {
                 return (
                   <PreferencesRow
                     key={id}
+                    id={id}
                     label={name}
                     value={levelOfInterest}
                     onPreferenceChange={this.createPreferenceChangeHandler(id)}
