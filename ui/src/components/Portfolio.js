@@ -20,7 +20,7 @@ class Portfolio extends Component {
               <tr>
                 <td>{investment.name}</td>
                 <td>{investment.ranking.toFixed(2)}</td>
-                <td>{investment.portfolioWeight.toFixed(2)}</td>
+                <td>{((investment.portfolioWeight)*100).toFixed(2)} %</td>
                 <td>
                   <button onClick={this.removeInvestment(index)}>X</button>
                 </td>
